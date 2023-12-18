@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundry.Views.AboutPage"
+             xmlns:vm="clr-namespace:Laundry.ViewModels"
+             Title="Главная страница">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="DeepSkyBlue" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,0" VerticalOptions="FillAndExpand">
+                    <Image Source="laundry.png" VerticalOptions="Center" HeightRequest="80" />
+                </ContentView>
+            </StackLayout>
+            <Label Text="Чисто-Быстро" FontAttributes="Bold"  FontSize="Title" TextColor="White" HorizontalOptions="Center" Padding="0,10,0,20"/>
+        </StackLayout>
+        <ScrollView Grid.Row="1" Padding="22,10,22,15">
+            <StackLayout Padding="0,0,0,0" Spacing="18">
+ 
+                    <StackLayout>
+                        <Frame CornerRadius="50" BackgroundColor="DeepSkyBlue" Padding="0,0,0,0">
+                            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="7">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="Скидка 15%" FontSize="23" FontAttributes="Bold" TextColor="White"/>
+                                <Image Source="hot.png" HeightRequest="28"></Image>
+                                
+                            </StackLayout>
+                            <Label Text="Оформи свой первый заказ через приложение и получи скидку 15% на общую сумму заказа!" FontAttributes="Bold" FontSize="13" Padding="0,0,0,0"  TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                <StackLayout>
+                    <Frame CornerRadius="35" BackgroundColor="DeepSkyBlue" Padding="0,0,0,0">
+                        <StackLayout Orientation="Vertical">
+                           
+                            <StackLayout Orientation="Horizontal" Padding="30,24,30,0" Spacing="7">
+                                <Image Source="dry_cleaning.png" VerticalOptions="Center" HeightRequest="55" />
+                                <Label Text="Деликатно удаляем даже самые сложные загрязнения" FontAttributes="Bold" FontSize="18" Padding="10,7,0,0"  TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="30,20,30,0" Spacing="7">
+                                <Image Source="washing_machine.png" VerticalOptions="Center" HeightRequest="55" />
+                                <Label Text="Используем только новейшую технику" FontAttributes="Bold" FontSize="18" Padding="10,3,0,0"  TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="30,20,30,24" Spacing="7">
+                                <Image Source="iron.png" VerticalOptions="Center" HeightRequest="55" />
+                                <Label Text="Глажка включена" FontAttributes="Bold" FontSize="18" Padding="10,15,0,0"  TextColor="White"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Frame CornerRadius="35" BackgroundColor="DeepSkyBlue" Padding="0,0,0,0">
+                    <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                        <Label Text="У нас самые низкие цены!" TextColor="White" FontAttributes="Bold" FontSize="20" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout Orientation="Horizontal" Padding="5,20,30,24" Spacing="7">
+                            <Image Source="jacket.png" VerticalOptions="Center" HeightRequest="55" />
+                            <Label Text="Пуховик от 1500 рублей" FontAttributes="Bold" FontSize="18" Padding="10,5,0,0"  TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="5,5,30,24" Spacing="7">
+                            <Image Source="coat.png" VerticalOptions="Center" HeightRequest="55" />
+                            <Label Text="Пальто от 1700 рублей" FontAttributes="Bold" FontSize="18" Padding="10,5,0,0"  TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="5,5,30,24" Spacing="7">
+                            <Image Source="suit.png" VerticalOptions="Center" HeightRequest="55" />
+                            <Label Text="Костюм от 2000 рублей" FontAttributes="Bold" FontSize="18" Padding="10,5,0,0"  TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="5,5,30,24" Spacing="7">
+                            <Image Source="trousers.png" VerticalOptions="Center" HeightRequest="55" />
+                            <Label Text="Брюки от 1200 рублей" FontAttributes="Bold" FontSize="18" Padding="10,5,0,0"  TextColor="White"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundry.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#FFFFFF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="15" Padding="15" Background="DeepSkyBlue">
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,3,5,5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Наименование изделия" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0" FontAttributes="Bold"/>
+                        <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                            <Entry Placeholder ="Пуховик, деловой костюм и т.д"  Text="{Binding Name, Mode=TwoWay}" FontSize="16" TextColor="Black"></Entry>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,5,5,5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Цвет изделия" FontSize="18" TextColor="DeepSkyBlue" FontAttributes="Bold" Padding="3,0,0,0"/>
+
+                        <Picker TextColor="Black" FontSize="16" Title="Цвет изделия" SelectedItem="{Binding Color, Mode=TwoWay}">
+                            <Picker.Items>
+                                <x:String>Темное</x:String>
+                                <x:String>Светлое</x:String>
+                                <x:String>Цветное</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Состав ткани" FontSize="18" TextColor="DeepSkyBlue" FontAttributes="Bold" Padding="3,0,0,0"/>
+                        <StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_1, Mode=TwoWay}"/>
+                                
+                                <Label Text="Хлопок" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_2, Mode=TwoWay}"/>
+                                <Label Text="Синтека" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="14,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_3, Mode=TwoWay}"/>
+                                <Label Text="Шерсть" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_4, Mode=TwoWay}"/>
+                                <Label Text="Шелк" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_5, Mode=TwoWay}"/>
+                                <Label Text="Полиэстр" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_6, Mode=TwoWay}"/>
+                                <Label Text="Лен" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_7, Mode=TwoWay}"/>
+                                <Label Text="Вискоза" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_8, Mode=TwoWay}"/>
+                                <Label Text="Нейлон" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="21,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Fabric_9, Mode=TwoWay}"/>
+                                <Label Text="Эластан" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="Размер" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0"  FontAttributes="Bold"/>
+                        <Entry Placeholder ="S/M/L/38/46 и т.д."  Text="{Binding Size, Mode=TwoWay}" FontSize="16" TextColor="Black"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Фурнитура" FontSize="18" TextColor="DeepSkyBlue" FontAttributes="Bold" Padding="3,0,0,0"/>
+                        <StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_1, Mode=TwoWay}"/>
+                                <Label Text="Молния" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="4,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_2, Mode=TwoWay}"/>
+                                <Label Text="Пуговицы" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="2,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_3, Mode=TwoWay}"/>
+                                <Label Text="Крючки" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_4, Mode=TwoWay}"/>
+                                <Label Text="Липучки" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_5, Mode=TwoWay}"/>
+                                <Label Text="Люверсы" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="DeepSkyBlue" IsChecked="{Binding Furniture_6, Mode=TwoWay}"/>
+                                <Label Text="Нет" FontSize="16" TextColor="Black" Padding="0,3,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="Дефекты" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0"  FontAttributes="Bold"/>
+                        <Label Text="Наличие дефектов не удаляемые при химической очистке" FontSize="15" Padding="3,0,0,0" />
+                        <Picker TextColor="Black" FontSize="16" SelectedItem="{Binding Defects, Mode=TwoWay}">
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Символы по уходу" FontSize="18" TextColor="DeepSkyBlue" FontAttributes="Bold" Padding="3,0,0,0"/>
+                        <StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="Black" IsChecked="{Binding Symbol_1, Mode=TwoWay}"/>
+                                <Image Source="laundry1.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <CheckBox Color="Black" IsChecked="{Binding Symbol_2, Mode=TwoWay}"/>
+                                <Image Source="laundry2.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <CheckBox Color="Black" IsChecked="{Binding Symbol_3, Mode=TwoWay}"/>
+                                <Image Source="laundry3.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+                                <CheckBox Color="Black"  IsChecked="{Binding Symbol_4, Mode=TwoWay}"/>
+                                <Image Source="dry.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <CheckBox Color="Black"  IsChecked="{Binding Symbol_5, Mode=TwoWay}"/>
+                                <Image Source="noiron.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <CheckBox Color="Black"  IsChecked="{Binding Symbol_6, Mode=TwoWay}"/>
+                                <Image Source="nobleach.jpg" WidthRequest="50"/>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="Доставка в химчистку" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0"  FontAttributes="Bold"/>
+                        <Picker TextColor="Black" FontSize="16" SelectedItem="{Binding Delivery_in, Mode=TwoWay}">
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="Доставка готового изделия на дом" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0"  FontAttributes="Bold"/>
+                        <Picker TextColor="Black" FontSize="16">
+                            <Picker.Items TextColor="Black" FontSize="16" SelectedItem="{Binding Delivery_out, Mode=TwoWay}">
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,3,5,5" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Адрес" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0" FontAttributes="Bold"/>
+                        <Label Text="Указать при наличии доставки" FontSize="15" Padding="3,0,0,0" />
+                        <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                            <Entry Placeholder ="Город, улица, дом, квартира"  Text="{Binding Adress, Mode=TwoWay}" FontSize="16" TextColor="Black"></Entry>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" BackgroundColor="White" Padding="5,10,5,10" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="Способ оплаты" FontSize="18" TextColor="DeepSkyBlue" Padding="3,0,0,0"  FontAttributes="Bold"/>
+                        <Picker TextColor="Black" FontSize="16" SelectedItem="{Binding Pay, Mode=TwoWay}">
+                            <Picker.Items >
+                                <x:String>Наличными</x:String>
+                                <x:String>Картой</x:String>
+                                <x:String>СПБ</x:String>
+                                <x:String>SberPay</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Отмена" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" FontSize="20" 
+                            FontAttributes="Bold"
+                            BorderColor="White"
+                            BorderWidth="3"
+                            CornerRadius="10"
+                            BackgroundColor="DeepSkyBlue"
+                            TextColor="White">
+                    </Button>
+                    <Button Text="Отправить" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" FontSize="20"
+                            FontAttributes="Bold"
+                            BorderColor="DeepSkyBlue"
+                            BorderWidth="3"
+                            CornerRadius="10"
+                            BackgroundColor="White"
+                            TextColor="DeepSkyBlue">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

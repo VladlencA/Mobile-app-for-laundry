@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Laundry.Views.RegisterPage"
+             Shell.NavBarIsVisible="False">
+    
+        <StackLayout Padding="30,0,30,0"   Background="DeepSkyBlue">
+        <StackLayout Padding="0,180,0,0">
+            <StackLayout Padding="0,0,0,40">
+                <Image Source="laundry.png" HeightRequest="150" WidthRequest="150"></Image>
+                <Label Text="Чисто-Быстро" TextColor="White" FontSize="30" Padding="75,10,0,0"  FontAttributes="Bold"></Label>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Frame BackgroundColor="White" Padding="5,10,0,0" CornerRadius="10">
+                    <Entry Placeholder ="Имя" Text ="{Binding Name_user, Mode=TwoWay}" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="White" Padding="5,10,0,0" CornerRadius="10">
+                    <Entry Placeholder ="Номер телефона"  Text ="{Binding Number_user, Mode=TwoWay}" FontSize="14"/>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="5,10,0,0" CornerRadius="10">
+                    <Entry Placeholder ="E-mail"  Text ="{Binding Mail_user, Mode=TwoWay}" FontSize="14"/>
+                </Frame>
+                    
+                <Frame BackgroundColor="White" Padding="5,10,0,0" CornerRadius="10">
+                    <Entry x:Name="passwordEntry"  Text ="{Binding Password_user, Mode=TwoWay}" Placeholder ="Пароль" FontSize="14" IsPassword ="True"/>
+                </Frame>
+
+                <Button Margin="0,30,0,0" Text="Зарегистрироваться"
+FontSize="20"
+FontAttributes="Bold"
+BorderColor="White"
+BorderWidth="3"
+CornerRadius="10"
+BackgroundColor="White"
+TextColor="DeepSkyBlue" 
+Command="{Binding LoginCommand_}"/>
+            </StackLayout>
+    </StackLayout>
+    </StackLayout>
+</ContentPage>

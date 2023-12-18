@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Laundry.Views.ItemsPage"
+             Title="Список заказов"
+             xmlns:local="clr-namespace:Laundry.ViewModels"  
+             xmlns:model="clr-namespace:Laundry.Models"  
+             x:Name="ItemsPage_">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" x:DataType="local:ItemsViewModel" Command="{Binding AddItemCommand_}" />
+    </ContentPage.ToolbarItems>
+  
+    <ListView
+        x:DataType="local:ItemsViewModel"
+        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+        RefreshCommand="{Binding LoadItemsCommand}"
+        ItemsSource="{Binding Item}"
+        SelectionMode="Single"
+        CachingStrategy="RecycleElement"
+        HasUnevenRows="True"
+        BackgroundColor="Transparent"
+        IsPullToRefreshEnabled="True"
+        ItemTapped="ItemTapped_"
+        SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Item">
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Command="{Binding Source={x:Reference ItemsPage_},Path=BindingContext.RemoveCommand}" CommandParameter="{Binding .}"  Text="Удалить"/>
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10">
+                        <Frame BackgroundColor="DeepSkyBlue" CornerRadius="30">
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Номер заказа: " TextColor="White" FontAttributes="Bold" FontSize="18"/>
+                                    <Label Text="{Binding Id}" LineBreakMode="NoWrap"  FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name_order}" LineBreakMode="NoWrap"  FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Статус заказа: " TextColor="White" FontAttributes="Bold" FontSize="18"/>
+                                    <Label Text="{Binding Status_order}" LineBreakMode="NoWrap"  FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+   
+</ContentPage>
+    
+    
+    
+    
+    
