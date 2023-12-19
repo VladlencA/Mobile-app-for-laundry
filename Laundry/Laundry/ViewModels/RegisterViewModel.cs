@@ -52,7 +52,7 @@ namespace Laundry.ViewModels
         {
             if (name_user != null & number_user !=null & mail_user !=null &password_user !=null)
             {
-                await DB.AddUser(Name_user, Number_user, Mail_user, Password_user);
+                await DB.AddUser(name_user, number_user, mail_user, password_user);
                 await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
                 return;
             }

@@ -29,10 +29,7 @@ namespace Laundry.ViewModels
             get => password_user_;
             set => SetProperty(ref password_user_, value);
         }
-        private bool ValidateSave()
-        {
-            return !String.IsNullOrWhiteSpace(mail_user_) & !String.IsNullOrWhiteSpace(password_user_);
-        }
+        
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLogin);

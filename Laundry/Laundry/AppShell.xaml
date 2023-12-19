@@ -80,7 +80,6 @@
     <FlyoutItem Title="Заказы" Icon="list.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
-
     
     <MenuItem Text="Выйти" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked" IconImageSource="exit.png">
     </MenuItem>

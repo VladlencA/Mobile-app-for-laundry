@@ -36,7 +36,6 @@ namespace Laundry.Services
             await db_users.CreateTableAsync<User>();
         }
 
-
         //Добавление заказов в ДБ
         public static async Task AddOrder(string name_order,
             string color_order,
@@ -113,22 +112,23 @@ namespace Laundry.Services
             )
         {
             await Init_user();
-            var order = new User
+            var user = new User
             {
                 Name_user = name_user,
                 Number_user = number_user,
                 Mail_user = mail_user,
                 Password_user = password_user,
             };
-            var Id = await db_users.InsertAsync(order);
+            var Id = await db_users.InsertAsync(user);
         }
-
+        
         //Удалить заказ из ДБ
         public static async Task RemoveOrder(int Id)
         {
             await Init();
             await db.DeleteAsync<Item>(Id);
         }
+
         //Получить данные по заказу
         public static async Task<IEnumerable<Item>> GetOrder()
         {
